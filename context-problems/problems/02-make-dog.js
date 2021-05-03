@@ -32,8 +32,24 @@ Dog.makeJet = function() {
 	return new this('Jet')
 }
 
-let myDog = new Dog('Snoopy');
+Dog.prototype.speak = function (word) {
+	return `${this.name} says ${word}`;
+}
+Dog.prototype.changeName = function (newName) {
+	this.name = newName;
+	return this.name;
+}
 
-
+let myDog = new Dog('Snoopy')
+/*
+{
+	prototype: {
+		Dog.prototype
+	},
+	name: 'Snoopy'
+}
+*/
+myDog.speak(); //if I was to put a different name then the Snoopy name would be changed to
+// whatever the name you put in the param in myDog.speak();
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = Dog;
